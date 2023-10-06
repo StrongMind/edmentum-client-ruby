@@ -20,11 +20,13 @@ with Edmentum systems. Built using a swagger generator and then cleaned up to be
 ## Local Install
 
 To use in a project:
-```bundle add edmentum-client-ruby
+```shell
+bundle add edmentum-client-ruby
 ```
 
 To develop locally:
-```git clone https://github.com/StrongMind/edmentum-client-ruby.git
+```shell
+git clone https://github.com/StrongMind/edmentum-client-ruby.git
 cd edmentum-client-ruby
 bundle install
 ```

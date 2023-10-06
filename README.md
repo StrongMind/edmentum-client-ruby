@@ -30,6 +30,7 @@ bundle install
 ```
 
 ## Run tests locally
+Tests are minimal due to auto-generation. We might add some in the future.
 
 Uses rspec for testing. To run tests locally, for example:
 ```console

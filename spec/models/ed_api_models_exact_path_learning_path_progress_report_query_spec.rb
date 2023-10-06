@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsExactPathLearningPathProgressReportQuery' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsExactPathLearningPathProgressReportQuery.new
+    @instance = EdmentumClient::EdApiModelsExactPathLearningPathProgressReportQuery.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsExactPathLearningPathProgressReportQuery' do
 
   describe 'test an instance of EdApiModelsExactPathLearningPathProgressReportQuery' do
     it 'should create an instance of EdApiModelsExactPathLearningPathProgressReportQuery' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsExactPathLearningPathProgressReportQuery)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsExactPathLearningPathProgressReportQuery)
     end
   end
   describe 'test attribute "subject_id"' do

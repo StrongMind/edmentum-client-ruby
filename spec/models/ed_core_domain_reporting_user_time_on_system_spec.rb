@@ -20,7 +20,7 @@ require 'date'
 describe 'EdCoreDomainReportingUserTimeOnSystem' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdCoreDomainReportingUserTimeOnSystem.new
+    @instance = EdmentumClient::EdCoreDomainReportingUserTimeOnSystem.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdCoreDomainReportingUserTimeOnSystem' do
 
   describe 'test an instance of EdCoreDomainReportingUserTimeOnSystem' do
     it 'should create an instance of EdCoreDomainReportingUserTimeOnSystem' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdCoreDomainReportingUserTimeOnSystem)
+      expect(@instance).to be_instance_of(EdmentumClient::EdCoreDomainReportingUserTimeOnSystem)
     end
   end
   describe 'test attribute "user_id"' do

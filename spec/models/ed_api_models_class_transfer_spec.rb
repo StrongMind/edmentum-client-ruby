@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsClassTransfer' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsClassTransfer.new
+    @instance = EdmentumClient::EdApiModelsClassTransfer.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsClassTransfer' do
 
   describe 'test an instance of EdApiModelsClassTransfer' do
     it 'should create an instance of EdApiModelsClassTransfer' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsClassTransfer)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsClassTransfer)
     end
   end
   describe 'test attribute "learner_user_id"' do

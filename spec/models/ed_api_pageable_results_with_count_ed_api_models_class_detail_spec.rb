@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiPageableResultsWithCountEdApiModelsClassDetail' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiPageableResultsWithCountEdApiModelsClassDetail.new
+    @instance = EdmentumClient::EdApiPageableResultsWithCountEdApiModelsClassDetail.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiPageableResultsWithCountEdApiModelsClassDetail' do
 
   describe 'test an instance of EdApiPageableResultsWithCountEdApiModelsClassDetail' do
     it 'should create an instance of EdApiPageableResultsWithCountEdApiModelsClassDetail' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiPageableResultsWithCountEdApiModelsClassDetail)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiPageableResultsWithCountEdApiModelsClassDetail)
     end
   end
   describe 'test attribute "results"' do

@@ -20,7 +20,7 @@ require 'date'
 describe 'EdPersonalizedLearningDomainLocationsLocation' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdPersonalizedLearningDomainLocationsLocation.new
+    @instance = EdmentumClient::EdPersonalizedLearningDomainLocationsLocation.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdPersonalizedLearningDomainLocationsLocation' do
 
   describe 'test an instance of EdPersonalizedLearningDomainLocationsLocation' do
     it 'should create an instance of EdPersonalizedLearningDomainLocationsLocation' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdPersonalizedLearningDomainLocationsLocation)
+      expect(@instance).to be_instance_of(EdmentumClient::EdPersonalizedLearningDomainLocationsLocation)
     end
   end
   describe 'test attribute "location_id"' do

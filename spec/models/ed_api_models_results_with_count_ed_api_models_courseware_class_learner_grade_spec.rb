@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade.new
+    @instance = EdmentumClient::EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade' do
 
   describe 'test an instance of EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade' do
     it 'should create an instance of EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsResultsWithCountEdApiModelsCoursewareClassLearnerGrade)
     end
   end
   describe 'test attribute "results"' do

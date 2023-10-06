@@ -12,8 +12,8 @@ Swagger Codegen version: 2.4.33
 
 require 'spec_helper'
 
-describe SwaggerClient::Configuration do
-  let(:config) { SwaggerClient::Configuration.default }
+describe EdmentumClient::Configuration do
+  let(:config) { EdmentumClient::Configuration.default }
 
   before(:each) do
     # uncomment below to setup host and base_path

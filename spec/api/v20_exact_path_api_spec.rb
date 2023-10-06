@@ -19,7 +19,7 @@ require 'json'
 describe 'V20ExactPathApi' do
   before do
     # run before each test
-    @instance = SwaggerClient::V20ExactPathApi.new
+    @instance = EdmentumClient::V20ExactPathApi.new
   end
 
   after do
@@ -28,7 +28,7 @@ describe 'V20ExactPathApi' do
 
   describe 'test an instance of V20ExactPathApi' do
     it 'should create an instance of V20ExactPathApi' do
-      expect(@instance).to be_instance_of(SwaggerClient::V20ExactPathApi)
+      expect(@instance).to be_instance_of(EdmentumClient::V20ExactPathApi)
     end
   end
 

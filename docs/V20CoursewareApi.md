@@ -33,17 +33,18 @@ Method | HTTP request | Description
 Enroll a user in a Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | 
 
 userid = 56 # Integer | 
 
-opts = { 
+opts = {
   start_date: DateTime.parse('2013-10-20T19:20:30+01:00'), # DateTime | End Date needs to be greater than Start Date (time of day is ignored).
   end_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
 }
@@ -52,7 +53,7 @@ begin
   #Enroll a user in a Courseware class.
   result = api_instance.classes_controller_enroll_courseware_user(classid, userid, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_enroll_courseware_user: #{e}"
 end
 ```
@@ -87,15 +88,16 @@ No authorization required
 Get Class Activities from GradeTracker
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | The ID of the class
 
-opts = { 
+opts = {
   gradetracker_category_id: 56 # Integer | (Optional) When supplied, filters the results down to just the given gradetrackerCategoryId.
 }
 
@@ -103,7 +105,7 @@ begin
   #Get Class Activities from GradeTracker
   result = api_instance.classes_controller_get_activities(classid, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_activities: #{e}"
 end
 ```
@@ -136,15 +138,16 @@ No authorization required
 Get Class Activity Scores from GradeTracker
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | The ID of the class
 
-opts = { 
+opts = {
   resource_node_id: 56, # Integer | (Optional) When supplied, filters to the results down to just the given resoureNodeId.
   learner_user_id: 56 # Integer | (Optional) When supplied, filters to the results down to just the given learnerUserId.
 }
@@ -153,7 +156,7 @@ begin
   #Get Class Activity Scores from GradeTracker
   result = api_instance.classes_controller_get_activity_scores(classid, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_activity_scores: #{e}"
 end
 ```
@@ -187,20 +190,20 @@ No authorization required
 Get current progress for all students in a Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | Class ID to get progress for.
-
 
 begin
   #Get current progress for all students in a Courseware class.
   result = api_instance.classes_controller_get_courseware_class_activity_progress(classid)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_courseware_class_activity_progress: #{e}"
 end
 ```
@@ -234,15 +237,16 @@ Get daily activity time on task records for all students in a Courseware class.
 <br>    <b>TimeOnTask (in minutes) property is obsolete, use TimeOnTaskInMilliseconds instead.</b>  </br>
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | Class ID to get time on task for.
 
-opts = { 
+opts = {
   startdate: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | Optional Start Date, if not provided - returns all activity time on task data for that class.
 }
 
@@ -250,7 +254,7 @@ begin
   #Get daily activity time on task records for all students in a Courseware class.
   result = api_instance.classes_controller_get_courseware_class_activity_time_on_task(classid, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_courseware_class_activity_time_on_task: #{e}"
 end
 ```
@@ -283,20 +287,20 @@ No authorization required
 Get current grades for all students in a Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | Class ID to get grades for.
-
 
 begin
   #Get current grades for all students in a Courseware class.
   result = api_instance.classes_controller_get_courseware_class_learner_grades(classid)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_courseware_class_learner_grades: #{e}"
 end
 ```
@@ -330,17 +334,18 @@ Get list of users to enroll in a Courseware class.
 <ul>    <li>This dataset can be quite large so result sets are paged using $pagesize and $skip parameters.</li>    <li>$pagesize represents the number of results to return in a request, with a maximum $pagesize of 10000.</li>    <li>If no $skip is provided, the call will return the first page of the result set.</li>    <li>The next set of records can be obtained by making a request to the value of the \"Next\" field returned in the response.</li>  </ul>  <br>For example:</br>  <ul>    <li>?$pagesize=10000&amp;$skip=10000 - get results from 10000 - 19999 (next 10000 records).</li>    <li>\"Next\": \"/courseware/v2.0/classes/{classid}/enrollableusers?$pagesize=10000&amp;$skip=10000\"</li>  </ul>
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | 
 
 pagesize = 56 # Integer | 
 
-opts = { 
+opts = {
   skip: 56 # Integer | 
 }
 
@@ -348,7 +353,7 @@ begin
   #Get list of users to enroll in a Courseware class.
   result = api_instance.classes_controller_get_courseware_enrollable_users(classid, pagesize, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_courseware_enrollable_users: #{e}"
 end
 ```
@@ -382,22 +387,22 @@ No authorization required
 Get a single user by classid and userid
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | 
 
 user_id = 56 # Integer | 
 
-
 begin
   #Get a single user by classid and userid
   result = api_instance.classes_controller_get_courseware_user(classid, user_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_courseware_user: #{e}"
 end
 ```
@@ -430,20 +435,20 @@ No authorization required
 Get a list of users in a Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | 
-
 
 begin
   #Get a list of users in a Courseware class.
   result = api_instance.classes_controller_get_courseware_users(classid)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_get_courseware_users: #{e}"
 end
 ```
@@ -475,22 +480,22 @@ No authorization required
 Transfer Learner from one class to another
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 class_id = 56 # Integer | Classroom Id pertaining to classroom to transfer learner
 
-transfer = SwaggerClient::EdApiModelsClassTransfer.new # EdApiModelsClassTransfer | Transfer object representing LearnerUserId of learner to be transferred and the ClassroomId of the learner's current class
-
+transfer = EdmentumClient::EdApiModelsClassTransfer.new # EdApiModelsClassTransfer | Transfer object representing LearnerUserId of learner to be transferred and the ClassroomId of the learner's current class
 
 begin
   #Transfer Learner from one class to another
   result = api_instance.classes_controller_transfer_learner_to_new_class(class_id, transfer)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_transfer_learner_to_new_class: #{e}"
 end
 ```
@@ -523,24 +528,24 @@ No authorization required
 Lock/Unlock content for an entire Courseware class including students added later.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | 
 
 resourcenodeid = 56 # Integer | 
 
-model = SwaggerClient::EdApiModelsClassStatus.new # EdApiModelsClassStatus | <br>              Locking/Unlocking a resource node locks/unlocks all children nodes               </br>
-
+model = EdmentumClient::EdApiModelsClassStatus.new # EdApiModelsClassStatus | <br>              Locking/Unlocking a resource node locks/unlocks all children nodes               </br>
 
 begin
   #Lock/Unlock content for an entire Courseware class including students added later.
   result = api_instance.classes_controller_update_class_status(classid, resourcenodeid, model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_update_class_status: #{e}"
 end
 ```
@@ -574,11 +579,12 @@ No authorization required
 Lock/Unlock content for a particular user in a Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 userid = 56 # Integer | 
 
@@ -586,14 +592,13 @@ classid = 56 # Integer |
 
 resourcenodeid = 56 # Integer | 
 
-model = SwaggerClient::EdApiModelsClassUserStatus.new # EdApiModelsClassUserStatus | <br>              Locking/Unlocking a resource node locks/unlocks all children nodes               </br>
-
+model = EdmentumClient::EdApiModelsClassUserStatus.new # EdApiModelsClassUserStatus | <br>              Locking/Unlocking a resource node locks/unlocks all children nodes               </br>
 
 begin
   #Lock/Unlock content for a particular user in a Courseware class.
   result = api_instance.classes_controller_update_class_user_status(userid, classid, resourcenodeid, model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_update_class_user_status: #{e}"
 end
 ```
@@ -628,22 +633,22 @@ No authorization required
 Update Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | The ID of the class to update.
 
-model = SwaggerClient::EdApiModelsClass.new # EdApiModelsClass | The class to update.              <br>              ProgramID, ClassID, ResourceNodeId, ResourceNodeName and SelfEnrollCode cannot be updated once an assignment is created, so values in these parameters will be ignored.</br><br>              Due date needs to be greater than Start Date</br><br>              Valid value for MasteryTestAttempts is between 0 and 10. Zero value translates to Unlimited Mastery test Attempts              </br>
-
+model = EdmentumClient::EdApiModelsClass.new # EdApiModelsClass | The class to update.              <br>              ProgramID, ClassID, ResourceNodeId, ResourceNodeName and SelfEnrollCode cannot be updated once an assignment is created, so values in these parameters will be ignored.</br><br>              Due date needs to be greater than Start Date</br><br>              Valid value for MasteryTestAttempts is between 0 and 10. Zero value translates to Unlimited Mastery test Attempts              </br>
 
 begin
   #Update Courseware class.
   result = api_instance.classes_controller_update_courseware_class(classid, model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_update_courseware_class: #{e}"
 end
 ```
@@ -676,11 +681,12 @@ No authorization required
 Update start and end dates for a user's Courseware Class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 class_id = 56 # Integer | 
 
@@ -688,7 +694,7 @@ user_id = 56 # Integer |
 
 start_date = DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | End Date needs to be greater than Start Date (time of day is ignored).
 
-opts = { 
+opts = {
   end_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
 }
 
@@ -696,7 +702,7 @@ begin
   #Update start and end dates for a user's Courseware Class.
   result = api_instance.classes_controller_update_courseware_user_enrollment(class_id, user_id, start_date, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_update_courseware_user_enrollment: #{e}"
 end
 ```
@@ -731,22 +737,22 @@ No authorization required
 Withdraw a user from a Courseware class.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 classid = 56 # Integer | 
 
 userid = 56 # Integer | 
 
-
 begin
   #Withdraw a user from a Courseware class.
   result = api_instance.classes_controller_withdraw_courseware_user(classid, userid)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->classes_controller_withdraw_courseware_user: #{e}"
 end
 ```
@@ -779,22 +785,22 @@ No authorization required
 Create a Courseware class in a program.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 programid = 56 # Integer | The ID of the program.
 
-model = SwaggerClient::EdApiModelsClass.new # EdApiModelsClass | The class to create.<br /><br>  ClassID and ResourceNodeName are optional and values in these parameters will be ignored.</br><br>  Due date needs to be greater than Start Date</br><br>  Valid value for MasteryTestAttempts is between 0 and 10. Zero value translates to Unlimited Mastery test Attempts</br><br>  SelfEnrollPassword min length is 4 characters  </br>
-
+model = EdmentumClient::EdApiModelsClass.new # EdApiModelsClass | The class to create.<br /><br>  ClassID and ResourceNodeName are optional and values in these parameters will be ignored.</br><br>  Due date needs to be greater than Start Date</br><br>  Valid value for MasteryTestAttempts is between 0 and 10. Zero value translates to Unlimited Mastery test Attempts</br><br>  SelfEnrollPassword min length is 4 characters  </br>
 
 begin
   #Create a Courseware class in a program.
   result = api_instance.programs_controller_create_program_class(programid, model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->programs_controller_create_program_class: #{e}"
 end
 ```
@@ -827,22 +833,22 @@ No authorization required
 Get a Courseware classes in a Courseware program by classId.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 program_id = 56 # Integer | The ID of the program.
 
 class_id = 56 # Integer | The ID of the class.
 
-
 begin
   #Get a Courseware classes in a Courseware program by classId.
   result = api_instance.programs_controller_get_program_class(program_id, class_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->programs_controller_get_program_class: #{e}"
 end
 ```
@@ -877,17 +883,18 @@ Get a list of Courseware classes in a Courseware program.
 <ul>    <li>This dataset can be quite large so result sets are paged using $pagesize and $skip parameters.</li>    <li>$pagesize represents the number of results to return in a request, with a maximum $pagesize of 10000.</li>    <li>If no $skip is provided, the call will return the first page of the result set.</li>    <li>The next set of records can be obtained by making a request to the value of the \"Next\" field returned in the response.</li>  </ul>  <br>For example:</br>  <ul>    <li>?$pagesize=10000&amp;$skip=10000 - get results from 10000 - 19999 (next 10000 records).</li>    <li>\"Next\": \"/courseware/v2.0/programs/{programid}/classes?$pagesize=10000&amp;$skip=10000\"</li>  </ul>
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 programid = 56 # Integer | The ID of the program.
 
 pagesize = 56 # Integer | 
 
-opts = { 
+opts = {
   skip: 56, # Integer | 
   name: 'name_example', # String | An optional class name to filter by.
   after_start_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
@@ -897,7 +904,7 @@ begin
   #Get a list of Courseware classes in a Courseware program.
   result = api_instance.programs_controller_get_program_classes(programid, pagesize, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->programs_controller_get_program_classes: #{e}"
 end
 ```
@@ -935,17 +942,18 @@ Gets a list of Courseware Classes (plus additional details) in a Courseware prog
 <br>This is very similar to GET /courseware/v2.0/programs/{programid}/classes,               except that each class contains lists of UserIds for enrolled Teachers and Learners.  </br>  <ul>    <li>This dataset can be quite large so result sets are paged using $pagesize and $skip parameters.</li>    <li>$pagesize represents the number of results to return in a request, with a maximum $pagesize of 10000.</li>    <li>If no $skip is provided, the call will return the first page of the result set.</li>    <li>The next set of records can be obtained by making a request to the value of the \"Next\" field returned in the response.</li>  </ul>  <br>For example:</br>  <ul>    <li>?$pagesize=10000&amp;$skip=10000 - get results from 10000 - 19999 (next 10000 records).</li>    <li>\"Next\": \"/courseware/v2.0/programs/{programid}/classdetails?$pagesize=10000&amp;$skip=10000\"</li>  </ul>
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 programid = 56 # Integer | The ID of the program.
 
 pagesize = 56 # Integer | 
 
-opts = { 
+opts = {
   skip: 56, # Integer | 
   after_start_date: DateTime.parse('2013-10-20T19:20:30+01:00') # DateTime | 
 }
@@ -954,7 +962,7 @@ begin
   #Gets a list of Courseware Classes (plus additional details) in a Courseware program.
   result = api_instance.programs_controller_get_program_classes_with_user_ids(programid, pagesize, opts)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->programs_controller_get_program_classes_with_user_ids: #{e}"
 end
 ```
@@ -989,17 +997,18 @@ No authorization required
 Get a list of top level resource nodes for Plato and Custom Courses. Immediate children not returned.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 begin
   #Get a list of top level resource nodes for Plato and Custom Courses. Immediate children not returned.
   result = api_instance.resource_nodes_controller_get_nodes
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->resource_nodes_controller_get_nodes: #{e}"
 end
 ```
@@ -1028,20 +1037,20 @@ No authorization required
 Get the list of immediate children of resourceNodeId provided.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20CoursewareApi.new
+api_instance = EdmentumClient::V20CoursewareApi.new
 
 resourcenodeid = 56 # Integer | 
-
 
 begin
   #Get the list of immediate children of resourceNodeId provided.
   result = api_instance.resource_nodes_controller_get_single_node(resourcenodeid)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20CoursewareApi->resource_nodes_controller_get_single_node: #{e}"
 end
 ```

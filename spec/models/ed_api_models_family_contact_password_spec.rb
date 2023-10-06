@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsFamilyContactPassword' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsFamilyContactPassword.new
+    @instance = EdmentumClient::EdApiModelsFamilyContactPassword.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsFamilyContactPassword' do
 
   describe 'test an instance of EdApiModelsFamilyContactPassword' do
     it 'should create an instance of EdApiModelsFamilyContactPassword' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsFamilyContactPassword)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsFamilyContactPassword)
     end
   end
   describe 'test attribute "new_password"' do

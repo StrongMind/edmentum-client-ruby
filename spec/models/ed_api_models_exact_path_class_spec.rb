@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsExactPathClass' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsExactPathClass.new
+    @instance = EdmentumClient::EdApiModelsExactPathClass.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsExactPathClass' do
 
   describe 'test an instance of EdApiModelsExactPathClass' do
     it 'should create an instance of EdApiModelsExactPathClass' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsExactPathClass)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsExactPathClass)
     end
   end
   describe 'test attribute "class_id"' do

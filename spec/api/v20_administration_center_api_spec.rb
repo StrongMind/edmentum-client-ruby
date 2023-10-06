@@ -19,7 +19,7 @@ require 'json'
 describe 'V20AdministrationCenterApi' do
   before do
     # run before each test
-    @instance = SwaggerClient::V20AdministrationCenterApi.new
+    @instance = EdmentumClient::V20AdministrationCenterApi.new
   end
 
   after do
@@ -28,16 +28,16 @@ describe 'V20AdministrationCenterApi' do
 
   describe 'test an instance of V20AdministrationCenterApi' do
     it 'should create an instance of V20AdministrationCenterApi' do
-      expect(@instance).to be_instance_of(SwaggerClient::V20AdministrationCenterApi)
+      expect(@instance).to be_instance_of(EdmentumClient::V20AdministrationCenterApi)
     end
   end
 
   # unit tests for alerts_controller_get_alert_summary_for_program
   # Get number of Mastery Test locks, items ready to score, and new message alerts.
   # Number of alerts returned is by instructor per program.  &lt;br&gt;&lt;/br&gt;  Optionally, specific userIds can be given as a query string parameter to only get counts for those users.  Count of messages and announcements are for all programs.
-  # @param program_id 
+  # @param program_id
   # @param [Hash] opts the optional parameters
-  # @option opts [Array<Integer>] :user_ids 
+  # @option opts [Array<Integer>] :user_ids
   # @return [EdApiModelsResultsWithCountEdApiModelsUserProgramAlertSummary]
   describe 'alerts_controller_get_alert_summary_for_program test' do
     it 'should work' do
@@ -60,7 +60,7 @@ describe 'V20AdministrationCenterApi' do
   # &lt;ul&gt;    &lt;li&gt;This dataset can be quite large so result sets are paged using $pagesize and $skip parameters.&lt;/li&gt;    &lt;li&gt;$pagesize represents the number of results to return in a request, with a maximum $pagesize of 10000.&lt;/li&gt;    &lt;li&gt;If no $skip is provided, the call will return the first page of the result set.&lt;/li&gt;    &lt;li&gt;The next set of records can be obtained by making a request to the value of the \&quot;Next\&quot; field returned in the response.&lt;/li&gt;  &lt;/ul&gt;  &lt;br&gt;For example:&lt;/br&gt;  &lt;ul&gt;    &lt;li&gt;?$pagesize&#x3D;10000&amp;amp;$skip&#x3D;10000;startDate&#x3D;1/1/2021 - get results from 10000 - 19999 (next 10000 records).&lt;/li&gt;    &lt;li&gt;\&quot;Next\&quot;: \&quot;/admincenter/v2.0/messages?$pagesize&#x3D;10000&amp;amp;$skip&#x3D;10000&amp;amp;startDate&#x3D;1/1/2021\&quot;&lt;/li&gt;  &lt;/ul&gt;
   # @param pagesize (Required) Number of results to return in a request, with a maximum page size of 10000
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :skip 
+  # @option opts [Integer] :skip
   # @option opts [DateTime] :start_date Optional Start Date, when provided all messages on or after this date will be included in result set
   # @return [EdApiPageableResultsWithCountEdApiModelsMessage]
   describe 'messages_controller_get_messages test' do
@@ -81,8 +81,8 @@ describe 'V20AdministrationCenterApi' do
 
   # unit tests for programs_controller_update_user_program_access
   # Update program access type for a user.
-  # @param programid 
-  # @param userid 
+  # @param programid
+  # @param userid
   # @param access_type Possible values for access type:              &lt;ul style&#x3D;\&quot;font-size: smaller;\&quot;&gt;&lt;li&gt;None&lt;/li&gt;&lt;li&gt;ProgramAdministrator&lt;/li&gt;&lt;li&gt;Teacher&lt;/li&gt;&lt;/ul&gt;
   # @param [Hash] opts the optional parameters
   # @return [String]
@@ -98,7 +98,7 @@ describe 'V20AdministrationCenterApi' do
   # @param start_date (Required) All usage data occurring on or after this date will be included in the result set
   # @param pagesize (Required) Number of results to return in a request, with a maximum page size of 10000
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :skip 
+  # @option opts [Integer] :skip
   # @return [EdApiPageableResultsWithCountEdCoreDomainReportingUserTimeOnSystem]
   describe 'time_on_system_controller_user_time_on_system test' do
     it 'should work' do
@@ -189,9 +189,9 @@ describe 'V20AdministrationCenterApi' do
   # unit tests for users_controller_get_users
   # Get a list of users that the user can update or delete.
   # &lt;ul&gt;    &lt;li&gt;This dataset can be quite large so result sets are paged using $pagesize and $skip parameters.&lt;/li&gt;    &lt;li&gt;$pagesize represents the number of results to return in a request, with a maximum $pagesize of 10000.&lt;/li&gt;    &lt;li&gt;If no $skip is provided, the call will return the first page of the result set.&lt;/li&gt;    &lt;li&gt;The next set of records can be obtained by making a request to the value of the \&quot;Next\&quot; field returned in the response.&lt;/li&gt;  &lt;/ul&gt;  &lt;br&gt;For example:&lt;/br&gt;  &lt;ul&gt;    &lt;li&gt;?$pagesize&#x3D;10000&amp;amp;$skip&#x3D;10000 - get results from 10000 - 19999 (next 10000 records).&lt;/li&gt;    &lt;li&gt;\&quot;Next\&quot;: \&quot;/admincenter/v2.0/users?$pagesize&#x3D;10000&amp;amp;$skip&#x3D;10000\&quot;&lt;/li&gt;  &lt;/ul&gt;
-  # @param pagesize 
+  # @param pagesize
   # @param [Hash] opts the optional parameters
-  # @option opts [Integer] :skip 
+  # @option opts [Integer] :skip
   # @option opts [String] :sis_id (Optional) Result set will be filtered down to users matching the supplied Student Information System Id (SisID)
   # @return [EdApiPageableResultsWithCountEdApiModelsUser]
   describe 'users_controller_get_users test' do
@@ -202,8 +202,8 @@ describe 'V20AdministrationCenterApi' do
 
   # unit tests for users_controller_password
   # Update password for a user.
-  # @param userid 
-  # @param password 
+  # @param userid
+  # @param password
   # @param [Hash] opts the optional parameters
   # @return [String]
   describe 'users_controller_password test' do

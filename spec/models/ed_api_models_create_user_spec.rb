@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsCreateUser' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsCreateUser.new
+    @instance = EdmentumClient::EdApiModelsCreateUser.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsCreateUser' do
 
   describe 'test an instance of EdApiModelsCreateUser' do
     it 'should create an instance of EdApiModelsCreateUser' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsCreateUser)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsCreateUser)
     end
   end
   describe 'test attribute "plato_name"' do

@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsLocationStructure' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsLocationStructure.new
+    @instance = EdmentumClient::EdApiModelsLocationStructure.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsLocationStructure' do
 
   describe 'test an instance of EdApiModelsLocationStructure' do
     it 'should create an instance of EdApiModelsLocationStructure' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsLocationStructure)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsLocationStructure)
     end
   end
   describe 'test attribute "has_children"' do

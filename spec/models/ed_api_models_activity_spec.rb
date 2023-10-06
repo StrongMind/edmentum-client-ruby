@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsActivity' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsActivity.new
+    @instance = EdmentumClient::EdApiModelsActivity.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsActivity' do
 
   describe 'test an instance of EdApiModelsActivity' do
     it 'should create an instance of EdApiModelsActivity' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsActivity)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsActivity)
     end
   end
   describe 'test attribute "resource_node_id"' do

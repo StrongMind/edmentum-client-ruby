@@ -20,7 +20,7 @@ require 'date'
 describe 'EdApiModelsMessage' do
   before do
     # run before each test
-    @instance = SwaggerClient::EdApiModelsMessage.new
+    @instance = EdmentumClient::EdApiModelsMessage.new
   end
 
   after do
@@ -29,7 +29,7 @@ describe 'EdApiModelsMessage' do
 
   describe 'test an instance of EdApiModelsMessage' do
     it 'should create an instance of EdApiModelsMessage' do
-      expect(@instance).to be_instance_of(SwaggerClient::EdApiModelsMessage)
+      expect(@instance).to be_instance_of(EdmentumClient::EdApiModelsMessage)
     end
   end
   describe 'test attribute "user_message_history_id"' do

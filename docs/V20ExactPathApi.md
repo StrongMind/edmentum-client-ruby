@@ -20,20 +20,20 @@ Method | HTTP request | Description
 Create a new Exact Path Class
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
-model = SwaggerClient::EdApiModelsExactPathClass.new # EdApiModelsExactPathClass | The model for the class to be created.              <br />ClassGrade, ClassExpirationDate, CloseoutReminderDate and Location are optional.              <br />AllowSelfEnrollment is optional and will default to false.              <br />Program ID is ignored during class creation              <br />At least one instructor ID is required.              <br />Learners are optional.
-
+model = EdmentumClient::EdApiModelsExactPathClass.new # EdApiModelsExactPathClass | The model for the class to be created.              <br />ClassGrade, ClassExpirationDate, CloseoutReminderDate and Location are optional.              <br />AllowSelfEnrollment is optional and will default to false.              <br />Program ID is ignored during class creation              <br />At least one instructor ID is required.              <br />Learners are optional.
 
 begin
   #Create a new Exact Path Class
   result = api_instance.classes_controller_create_exact_path_class(model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_create_exact_path_class: #{e}"
 end
 ```
@@ -65,20 +65,20 @@ No authorization required
 Delete a Exact Path Class by Class ID
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
 class_id = 56 # Integer | The id of the class to delete.  If class has active assignments, the class will be archived.
-
 
 begin
   #Delete a Exact Path Class by Class ID
   result = api_instance.classes_controller_delete_exact_path_class(class_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_delete_exact_path_class: #{e}"
 end
 ```
@@ -110,22 +110,22 @@ No authorization required
 Enroll learner into Exact Path Class
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
 class_id = 56 # Integer | The id of the class to add the learner.
 
 learner_id = 56 # Integer | The user ID of the learner to enroll in the class.
 
-
 begin
   #Enroll learner into Exact Path Class
   result = api_instance.classes_controller_enroll_learner_in_class(class_id, learner_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_enroll_learner_in_class: #{e}"
 end
 ```
@@ -158,20 +158,20 @@ No authorization required
 Get a Exact Path Class by Class ID
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
 class_id = 56 # Integer | The id of the class to retrieve.
-
 
 begin
   #Get a Exact Path Class by Class ID
   result = api_instance.classes_controller_get_exact_path_class(class_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_get_exact_path_class: #{e}"
 end
 ```
@@ -205,20 +205,20 @@ Get a simplified data set of learners enrolled in an Exact Path Class by Class I
 <ul>    <li>Gender can be 0 (male) or 1 (female).</li>    <li>Grade is 0-15 with 0 being kindergarten and 13-15 adult values that are invalid for learners.</li>    <li>Birth date is date only so will always be 0's for time.</li>  </ul>
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
 class_id = 56 # Integer | The Class ID
-
 
 begin
   #Get a simplified data set of learners enrolled in an Exact Path Class by Class ID.
   result = api_instance.classes_controller_get_exact_path_class_learners(class_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_get_exact_path_class_learners: #{e}"
 end
 ```
@@ -250,22 +250,22 @@ No authorization required
 Get the learning path progress report for a subject by date range for the current academic year.
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
 class_id = 56 # Integer | The Class ID
 
-model = SwaggerClient::EdApiModelsExactPathLearningPathProgressReportQuery.new # EdApiModelsExactPathLearningPathProgressReportQuery | The query model for the report containing the ID for the subject (Valid entries are: 5 = Math, 4 = Language Arts, 15 = Reading.),              <br />the starting date for the report results and the the end date for the range of results.
-
+model = EdmentumClient::EdApiModelsExactPathLearningPathProgressReportQuery.new # EdApiModelsExactPathLearningPathProgressReportQuery | The query model for the report containing the ID for the subject (Valid entries are: 5 = Math, 4 = Language Arts, 15 = Reading.),              <br />the starting date for the report results and the the end date for the range of results.
 
 begin
   #Get the learning path progress report for a subject by date range for the current academic year.
   result = api_instance.classes_controller_get_time_spent_in_learning_path(class_id, model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_get_time_spent_in_learning_path: #{e}"
 end
 ```
@@ -298,22 +298,22 @@ No authorization required
 Remove a learner from a Exact Path Class
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
 class_id = 56 # Integer | The id of the class.
 
 learner_id = 56 # Integer | The user ID of the learner to remove from the class.
 
-
 begin
   #Remove a learner from a Exact Path Class
   result = api_instance.classes_controller_remove_learner_from_class(class_id, learner_id)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_remove_learner_from_class: #{e}"
 end
 ```
@@ -346,20 +346,20 @@ No authorization required
 Update Exact Path Class
 
 ### Example
+
 ```ruby
 # load the gem
-require 'swagger_client'
+require 'edmentum_client'
 
-api_instance = SwaggerClient::V20ExactPathApi.new
+api_instance = EdmentumClient::V20ExactPathApi.new
 
-model = SwaggerClient::EdApiModelsExactPathClass.new # EdApiModelsExactPathClass | The model for the class to be created.              <br />ClassId is required.              <br />ClassGrade, ClassExpirationDate, CloseoutReminderDate and Location are optional.              <br />AllowSelfEnrollment is optional and will default to false.              <br />Program ID is ignored during class creation              <br />At least one instructor ID is required.              <br />Learners are optional.
-
+model = EdmentumClient::EdApiModelsExactPathClass.new # EdApiModelsExactPathClass | The model for the class to be created.              <br />ClassId is required.              <br />ClassGrade, ClassExpirationDate, CloseoutReminderDate and Location are optional.              <br />AllowSelfEnrollment is optional and will default to false.              <br />Program ID is ignored during class creation              <br />At least one instructor ID is required.              <br />Learners are optional.
 
 begin
   #Update Exact Path Class
   result = api_instance.classes_controller_update_exact_path_class(model)
   p result
-rescue SwaggerClient::ApiError => e
+rescue EdmentumClient::ApiError => e
   puts "Exception when calling V20ExactPathApi->classes_controller_update_exact_path_class: #{e}"
 end
 ```

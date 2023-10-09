@@ -16,10 +16,10 @@ $:.push File.expand_path("../lib", __FILE__)
 require "edmentum_client/version"
 
 Gem::Specification.new do |s|
-  s.name        = "edmentum-client-ruby"
+  s.name        = "edmentum-client"
   s.version     = EdmentumClient::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ["Mark Ng", "Paul Shippy"]
+  s.authors     = ["Mark Ng", "Paul Shippy", "Mike Benner"]
   s.email       = ["teambelding@strongmind.com"]
   s.homepage    = "https://github.com/StrongMind/edmentum-client-ruby"
   s.summary     = "Edmentum Web API - v2.0 Ruby Gem"

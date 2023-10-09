@@ -49,6 +49,14 @@ module EdmentumClient
     # @return [String]
     attr_accessor :password
 
+    # Defines the client id used with OAuth2.
+    # @return [String]
+    attr_accessor :client_id
+
+    # Defines the client secret used with OAuth2.
+    # @return [String]
+    attr_accessor :client_secret
+
     # Defines the access token (Bearer) used with OAuth2.
     attr_accessor :access_token
 
@@ -190,7 +198,7 @@ module EdmentumClient
 
     # Gets Basic Auth token string
     def basic_auth_token
-      'Basic ' + ["#{username}:#{password}"].pack('m').delete("\r\n")
+      'Basic ' + ["#{client_id}:#{client_secret}"].pack('m').delete("\r\n")
     end
 
     # Returns Auth Settings hash for api client.

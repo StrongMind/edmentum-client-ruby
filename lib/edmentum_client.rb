@@ -86,4 +86,32 @@ module EdmentumClient
       end
     end
   end
+
+  class Authentication
+    def self.token(config)
+      url = "https://auth.edmentum.com/connect/token"
+      req_opts = {
+        method: :post,
+        headers: {
+          "Authorization": "#{config.basic_auth_token}",
+          "Content-Type": "application/x-www-form-urlencoded"
+        },
+        body: {
+          grant_type: "password",
+          username: config.username,
+          password: config.password,
+          scope: "openid profile offline_access role api_web"
+        }
+      }
+
+      request = Typhoeus::Request.new(url, req_opts)
+      response = request.run
+      if response.success?
+        "Bearer " + JSON.parse(response.body)["access_token"]
+      else
+        raise "Authentication failed"
+      end
+
+    end
+  end
 end

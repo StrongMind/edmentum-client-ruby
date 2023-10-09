@@ -40,3 +40,19 @@ rspec
 ```
 
 > Code owners can be found in [CODEOWNERS file](./CODEOWNERS)
+
+## Usage
+```ruby
+require 'edmentum_client'
+ec = ::EdmentumClient.configure do |config|
+config.username = "mark.ng@strongmind.com@PRIMA" # Notice the PRIMA...this is the Account name
+config.password = "YOUR REAL PASSWORD HERE"
+config.client_id = "YOUR REAL ID HERE"
+config.client_secret = "YOUR REAL SECRET HERE"
+config.debugging = true
+config.api_key['Authorization'] = ::EdmentumClient::Authentication.token(config)
+end
+
+aa = ::EdmentumClient::V20AdministrationCenterApi.new
+aa.users_controller_get_users(100)
+```
